@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <table>
+     <tr>
+     <% for(var name in fields) { %>
+   
+      <td><b><%= name %></b></td>
+     <% } %>
+     </tr>
+     
+     <% pets.forEach(function(pet) { %>
+   
+     <tr>
+      <td><%= pet.name %></td>
+      <td><%= pet.owner %></td>
+     </tr>
+     <% }) %>
+    </table>
+
+    <hr>
+    <form action="/add_pet" method="POST">
+      Name: <input type="text" name="name"></input><br>
+      Owner: <input type="text" name="owner"></input><br>
+      <input type="submit" value="Add Pet!">
+    </form>
+  </body>
+</html>
