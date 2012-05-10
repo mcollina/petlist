@@ -3,13 +3,25 @@
  * GET home page.
  */
 
+// mysql://2fd928bae5e3e9:c5a3b637@us-cdbr-east.cleardb.com/heroku_32d26bd36b64469?reconnect=true
+
+var HOST;
+var USERNAME;
+var PASSWORD;
+var DATABASE;
+
+var connect_string_splitted = process.env.CLEARDB_DATABASE_URL.split(":");
+USERNAME = connect_string_splitted[1].split("//")[1];
+PASSWORD = connect_string_splitted[2].split("@")[0];
+HOST = connect_string_splitted[2].split("@")[1].split("/")[0];
+DATABASE = connect_string_splitted[2].split("@")[1].split("/")[1].split("?")[0];
+
 var mysql = require('mysql');
-var DATABASE = "heroku_32d26bd36b64469";
 
 var client = mysql.createClient({
-  host: "us-cdbr-east.cleardb.com",
-  user: '1fd928bae5e3e9',
-  password: 'c5a3b637'
+  host: HOST,
+  user: USERNAME,
+  password: PASSWORD
 });
 
 
