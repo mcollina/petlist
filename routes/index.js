@@ -4,12 +4,12 @@
  */
 
 var mysql = require('mysql');
-var DATABASE = 'sample';
+var DATABASE = "heroku_32d26bd36b64469";
 
 var client = mysql.createClient({
-  host: process.env.CLEARDB_DATABASE_URL || "localhost",
-  user: 'pmas',
-  password: 'pmas',
+  host: "us-cdbr-east.cleardb.com",
+  user: '1fd928bae5e3e9',
+  password: 'c5a3b637'
 });
 
 
