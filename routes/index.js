@@ -7,6 +7,7 @@ var mysql = require('mysql');
 var DATABASE = 'sample';
 
 var client = mysql.createClient({
+  host: process.env.CLEARDB_DATABASE_URL || "localhost",
   user: 'pmas',
   password: 'pmas',
 });
