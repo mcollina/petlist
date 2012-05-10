@@ -1,5 +1,6 @@
 
-# Petlist APP
+Petlist APP
+============
 
 ## Requirements
 
@@ -28,5 +29,19 @@ $: sudo make install
 
 $: npm install
 $: node app
+
+## Running on Heroku
+
+* Signup to (Heroku)[heroku.com]
+* Install (Heroku Toolbelt)[https://toolbelt.heroku.com/]
+* run `heroku login`
+* run `git clone git@github.com:mcollina/petlist.git; cd petlist`
+* run `heroku create --stack cedar --buildpack
+  http://github.com/heroku/heroku-buildpack-nodejs.git`
+* Add the cleardb addons by running `heroku addons:add cleardb:ignite`
+* run `heroku config` to know the credentials for the database
+* connect to the database using your preferred client and create the pet
+  table.
+* run `git push heroku master`
 
 Mail me if you have problems running this example: matteo.collina2@unibo.it
