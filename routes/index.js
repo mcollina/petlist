@@ -1,4 +1,3 @@
-
 /*
  * GET home page.
  */
@@ -21,13 +20,9 @@ var mysql = require('mysql');
 var client = mysql.createClient({
   host: HOST,
   user: USERNAME,
-  password: PASSWORD
+  password: PASSWORD,
+  database: DATABASE
 });
-
-
-// If no callback is provided, any errors will be emitted as `'error'`
-// events by the client
-client.query('USE '+DATABASE);
 
 exports.index = function(req, res){
 
